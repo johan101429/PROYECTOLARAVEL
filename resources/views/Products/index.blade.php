@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-<p> hola mundo </P>
+<a href="/product/create"> CREAR PRODUCTO </a>
 @endsection
