@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('Products.index');
+        return view('Products.index', [
+            'products' => Product::all(),
+        ]);
     }
 
     /**
@@ -25,6 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         return view('Products.create');
+
     }
 
     /**
@@ -37,20 +42,35 @@ class ProductController extends Controller
     {
         $request->validate([
 
-            'name'=>['required','string','max:30'],
-            'value'=>['required','integer'],
-            'description'=>['required','string'],
-
+            'name' => ['required', 'string', 'max:30'],
+            'value' => ['required', 'integer'],
+            'description' => ['required', 'string'],
+            'status' => ['required'],
         ]);
+        $image = '';
+        if ($request->file('productcover') != null) {
+            $image = $this->get_and_save_image($request->file('productcover'));
+
+        }
+
         Product::create([
             'name' => $request->get('name'),
             'value' => $request->get('value'),
             'description' => $request->get('description'),
             'status' => $request->get('status'),
+            'image' => $image,
         ]);
         return redirect('/product');
     }
+    public function get_and_save_image($productcover)
+    {
 
+        $extension = $productcover->getClientOriginalExtension();
+
+        Storage::disk('public')->put($productcover->getFilename() . '.' . $extension, File::get($productcover));
+        return $productcover->getFilename() . '.' . $extension;
+
+    }
     /**
      * Display the specified resource.
      *
@@ -59,7 +79,9 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        return view ('Products.show', [
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -70,7 +92,9 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        //
+        return view('Products.edit', [
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -82,7 +106,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        //
+        $request->validate([
+
+            'name' => ['required', 'string', 'max:30'],
+            'value' => ['required', 'integer'],
+            'description' => ['required', 'string'],
+            'status' => ['required'],
+        ]);
+        if ($request->file('productcover') != null) {
+            $product->image = $this-> get_and_save_image($request->file('productcover'));
+
+        }
+
+        $product->name = $request->get('name');
+        $product->value = $request->get('value');
+        $product->description = $request->get('description');
+        $product->status = $request->get('status');
+        $product->save();
+        return redirect('/product');
+
     }
 
     /**
@@ -92,7 +134,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(product $product)
+
     {
-        //
+        dd($product);
+        product::destroy($product->id);
+
     }
 }
