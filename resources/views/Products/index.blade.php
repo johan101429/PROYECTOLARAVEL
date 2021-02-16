@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
-            <a href="/product/create"> {{__('es.product.create_title')}} </a>
-
-
+            <a href="/product/create"> {{__('es.product.create_title')}} </a><br>
+            <a href="/category/create"> {{__('es.category.create_title_category')}} </a>
 
 <div>
     <h1 class="text-center mt-3">{{__('es.product.list_products_title')}}</h1>
@@ -24,7 +23,7 @@
                             <span class="material-icons"> visibility </span></a>
                         <a type="button" class="btn btn-primary" href="/product/{{$prod->id}}/edit">
                             <span class="material-icons"> create </span></a>
-                        <a type="button" class="btn btn-danger" href="/product/{{$prod->id}}/delete">
+                        <a type="button" class="btn btn-danger" onclick="deleteProduct({{$prod->id}})" >
                             <span class="material-icons"> delete </span></a>
 
 

@@ -14,6 +14,18 @@ return [
         'status' => 'Estado del Producto',
         'Description' => 'Descripción del Producto',
         'image' => 'Imagen',
+    ],
+    
+    'category'=> [
+        //Title
+        'create_title_category' => "Crear Categoria",
+        'list_categories_title' => 'Todos las Categorias',
+        'update_title' => 'Modificar Producto',
+        'show_title' => 'Ver  Producto',
+
+        //item
+        'name' => 'Nombre de la categoria',
+        
     ]
     ];
 
