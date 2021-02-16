@@ -133,11 +133,8 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
-
-    {
-        dd($product);
-        product::destroy($product->id);
+    public function destroy(Product $product){
+        Product::destroy($product->id);
 
     }
 }
