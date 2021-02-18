@@ -1,11 +1,14 @@
 @extends('layouts.app')
 @section('content')
-            <a href="/product/create"> {{__('es.product.create_title')}} </a><br>
-            <a href="/category/create"> {{__('es.category.create_title_category')}} </a>
+<div class="d-flex justify-content-end m-5">
+    <a href="/product/create"> {{__('es.product.create_title')}} </a>
+    
+</div>
+            
 
 <div>
     <h1 class="text-center mt-3">{{__('es.product.list_products_title')}}</h1>
-    <table class="table table-bordered">
+    <table class="table table-bordered m-5">
         <thead>
             <th scope="col">@lang('es.product.name')</th>
             <th scope="col">@lang('es.product.value')</th>

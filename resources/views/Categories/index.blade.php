@@ -1,27 +1,27 @@
 @extends('layouts.app')
 @section('content')
-           
-            <a href="/category/create"> {{__('es.category.create_title_category')}} </a>
-{{--
+<div class="d-flex justify-content-end m-5">
+    <a href="/category/create"> {{__('es.category.create_title')}} </a>
+</div>   
+            
+
 <div>
     <h1 class="text-center mt-3">{{__('es.category.list_categories_title')}}</h1>
     <table class="table table-bordered">
         <thead>
-            <th scope="col">@lang('es.category.name')</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">@lang('es.category.nameCategory')</th>
+            <th scope="col">@lang('es.category.nameCategory')</th>
+            <th scope="col">@lang('es.category.nameCategory')</th>
         </thead>
         <tbody>
-           
+            @foreach ( $category as $cat )
                 <tr>
                     <td> check</td>
-                    <td>{{$category-> nameCategory}}</td>
-                    <td>value</td>
-                    <td>idprod</td>
-                   
+                    <td>{{$cat-> nameCategory}}</td>
+                    <td>{{$cat-> description}}</td>
 
                 </tr>
-         
+                @endforeach
 
 
         </tbody>
@@ -32,7 +32,7 @@
 
 </div>
 
- --}}
+
 
 
 @endsection
