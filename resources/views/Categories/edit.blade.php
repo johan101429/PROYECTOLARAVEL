@@ -1,47 +1,31 @@
 @extends('layouts.app')
 @section('content')
     <div class="container mt-5">
-        <h1 class="card-title text-center">@lang('es.product.update_title')</h1>
+        <h1 class="card-title text-center">@lang('es.category.update_title')</h1>
         <div class="card text-justify center-form">
 
             <div class="card-body">
 
-                <form method="POST" class=" needs- validations" action="/product/{{$product->id}}" 
+                <form method="POST" class=" needs- validations" action="/category/{{$category->id}}" 
                 enctype="multipart/form-data" novalidate>
-                {{ csrf_field() }}
-                    @csrf
+               {{ csrf_field() }}   
+                @csrf
                     @method('put')
-
-                    <div class="form-row row">
-                        <div class="col-12 col-md-6 col-sm-6">
-                            <label>image</label>
-                            <input type="file" name="productcover" 
-                                class="form-control">
-                            
-                        </div>
-
-                        <div class="col-6">
-                            <img src="{{url(Storage::url($product->image))}}" width ="350"class ="img-fluid">
-
-
-                        </div>
-                    </div>
-
                     <div class="form-row">
-                        <div class="col-12 col-md-6 col-sm-6">
-                            <label>@lang('es.product.name')</label>
-                            <input type="text" id="name" name="name"
-                                class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }} {{$product->name}}"/>
-                            @error('name')
+                        <div class="col-6">
+                            <label>@lang('es.category.nameCategory')</label>
+                            <input type="text" id="nameCategory" name="nameCategory"
+                                class="form-control @error('nameCategory') is-invalid @enderror" value="{{ old('nameCategory') }} {{$category->nameCategory}}"/>
+                            @error('nameCategory')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
                                     <span> 
                                     @enderror
                         </div>
                         <div class="col-6">
-                            <label>@lang('es.product.value'):</label>
+                            <label>@lang('es.category.value'):</label>
                             <input type="number" id="value" name="value"
-                                class="form-control @error('value') is-invalid @enderror" value="{{ old('value') }} {{$product->value}}"/>
+                                class="form-control @error('value') is-invalid @enderror" value="{{ old('value') }} {{$category->value}}"/>
                             @error('value')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{$message}}</b>
@@ -49,23 +33,47 @@
                             @enderror
                         </div>
                         <div class="col-12">
-                            <label> @lang('es.product.Description'):</label>
+                            <label> @lang('es.category.description'):</label>
                             <textarea id="description" name="description"
-                                class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}{{$product->description}}"></textarea>
+                                class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }} {{$category->description}}"></textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{$message}}</b>
                                 <span>
                             @enderror
                         </div>
-                       
                         <div class="col-6">
-                            <label> @lang('es.product.status'):</label>
-                           <select name="status" id="status" class="form-control @error('status') is-invalid @enderror" value="{{ old('status') }} {{$product->status}}">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
+                            <label>@lang('es.category.status'):</label>
+                            <input type="text" id="status" name="status"
+                                class="form-control @error('status') is-invalid @enderror" value="{{ old('status') }} {{$category->status}}">
+                            @error('status')
+                                <span class="invalid-feedback" role="alert">
+                                    <b>{{$message}}</b>
+                                <span>
+                            @enderror
                         </div>
+                   {{--   @foreach($category as $cat )
+               
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {{$cat-> nameCategory}}
+                                     </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                         <div class="form-check">
+                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                             <label class="form-check-label" for="flexCheckDefault">
+                                                 {{$cat-> nameCategory}}
+                                             </label>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     @endforeach --}}
                     </div>
                     <button>Modificar</button>
                 </form>

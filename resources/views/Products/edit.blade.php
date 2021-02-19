@@ -31,7 +31,7 @@
                         <div class="col-12 col-md-6 col-sm-6">
                             <label>@lang('es.product.name')</label>
                             <input type="text" id="name" name="name"
-                                class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }} {{$product->name}}"/>
+                                class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }} "/>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>

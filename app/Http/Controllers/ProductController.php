@@ -144,4 +144,10 @@ class ProductController extends Controller
         Product::destroy($product->id);
 
     }
+    public function listado()
+    {
+        return view('Products.listado', [
+            'products' => Product::all(),
+        ]);
+    }
 }

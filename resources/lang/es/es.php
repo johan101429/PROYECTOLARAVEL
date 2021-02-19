@@ -20,14 +20,14 @@ return [
         //Title
         'create_title' => "Crear Categoria",
         'list_categories_title' => 'Todos las Categorias',
-        'update_title' => 'Modificar Producto',
-        'show_title' => 'Ver  Producto',
+        'update_title' => 'Modificar Categoria',
+        'show_title' => 'Ver categoria',
 
         //item
         'nameCategory' => 'Nombre de la categoria',
         'status' => 'Duración',
         'description' => 'Descripción de Categoria',
-        'value' => 'Valor del Producto',
+        'value' => 'Estado de la Categoria',
     ]
     ];
 
