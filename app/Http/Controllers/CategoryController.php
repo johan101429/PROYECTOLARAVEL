@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -38,14 +47,23 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-             'nameCategory'=>['required', 'string', 'max:30'],
-             ]);
-            category::create([
-                nameCategory
-            ]);
+
+            'nameCategory' => ['required', 'string', 'max:30'],
+            'description' => ['required', 'string'],
+            'value' => ['required', 'string'],
+            'status' => ['required'],
+        ]);
+      
+        Category::create([
+            'nameCategory' => $request->get('nameCategory'),
+            'description' => $request->get('description'),
+            'value' => $request->get('value'),
+            'status' => $request->get('status'),
+        ]);
+        return redirect('/category');
     }
 
-    /**
+    /** 
      * Display the specified resource.
      *
      * @param  \App\Models\Category  $category
@@ -53,7 +71,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view ('Categories.show', [
+            'category' => $category,
+        ]);
     }
 
     /**

@@ -12,10 +12,10 @@
 
                     <div class="form-row">
                         <div class="col-6">
-                            <label>@lang('es.category.name')</label>
+                            <label>@lang('es.category.nameCategory')</label>
                             <input type="text" id="nameCategory" name="nameCategory"
                                 class="form-control @error('nameCategory') is-invalid @enderror" value="{{ old('nameCategory') }}">
-                            @error('name')
+                            @error('nameCategory')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
                                     <span> 
@@ -31,32 +31,48 @@
                                 <span>
                             @enderror
                         </div>
-                        <div class="col-12">
-                            <label> @lang('es.category.Description'):</label>
-                            <textarea id="category" name="status"
-                                class="form-control @error('status') is-invalid @enderror" value="{{ old('status') }}"></textarea>
+                        <div class="col-6">
+                            <label>@lang('es.category.description'):</label>
+                            <input type="text" id="description" name="description"
+                                class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}">
+                            @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <b>{{$message}}</b>
+                                <span>
+                            @enderror
+                        </div>
+                        <div class="col-6">
+                            <label>@lang('es.category.status'):</label>
+                            <input type="text" id="status" name="status"
+                                class="form-control @error('status') is-invalid @enderror" value="{{ old('status') }}">
                             @error('status')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{$message}}</b>
                                 <span>
                             @enderror
                         </div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <th scope="col"></th>
-                                <th scope="col">@lang('es.product.name')</th>
-                                <th scope="col">@lang('es.product.value')</th>
-                                <th scope="col">@lang('es.product.status')</th>
-                               
-                            </thead>
-                  
-                    
-                    
-                            </tbody>
-                    
-                    
-                    
-                        </table>
+                   {{--   @foreach($category as $cat )
+               
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {{$cat-> nameCategory}}
+                                     </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                         <div class="form-check">
+                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                             <label class="form-check-label" for="flexCheckDefault">
+                                                 {{$cat-> nameCategory}}
+                                             </label>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     @endforeach --}}
                     </div>
                     <button>Crear</button>
                 </form>
