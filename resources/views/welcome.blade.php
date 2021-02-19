@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Programando</title>
-
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Fonts
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -22,40 +24,57 @@
          
     </head>
     <body >
-    
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                        <a href="{{ url('/product') }}" class="text-sm text-gray-700 underline">Productos</a>
-                        <a href="{{ url('/category') }}" class="text-sm text-gray-700 underline">Categorias</a>
-
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                       
-                    @endauth
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient m-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ url('/') }}" style="color:rgb(9, 255, 0);">
+                        Programando Ando...
+                    </a>
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#bdNavbar" aria-controls="bdNavbar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse mt-5" id="bdNavbar">
+                        <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+                        @if (Route::has('login'))
+                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            @auth
+                                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                                <a href="{{ url('/product') }}" class="text-sm text-gray-700 underline">Productos</a>
+                                <a href="{{ url('/category') }}" class="text-sm text-gray-700 underline">Categorias</a>
+        
+                            @else
+                                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+        
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                                @endif
+                               
+                            @endauth
+                        </div>
+                    @endif
+                        </ul>
+                      
                 </div>
-            @endif
-            <div>
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="{{url(Storage::url('home/home1.jpg'))}}" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="{{url(Storage::url('home/home2.png'))}}" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="{{url(Storage::url('home/home3.jpg'))}}" alt="Third slide">
-                        </div>
-                    </div>
+                </div>
+            </nav>
+               
+        </header>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{asset('storage/images/descarga.jpg')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('storage/images/lenguajes.jpg')}}}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('storage/images/images.jpg')}}" alt="Third slide">
                 </div>
             </div>
+        </div>
+            
            
             </div>
         </div>

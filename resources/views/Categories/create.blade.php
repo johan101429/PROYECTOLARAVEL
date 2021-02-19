@@ -31,10 +31,10 @@
                                 <span>
                             @enderror
                         </div>
-                        <div class="col-6">
-                            <label>@lang('es.category.description'):</label>
-                            <input type="text" id="description" name="description"
-                                class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}">
+                        <div class="col-12">
+                            <label> @lang('es.category.description'):</label>
+                            <textarea id="description" name="description"
+                                class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}"></textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{$message}}</b>
