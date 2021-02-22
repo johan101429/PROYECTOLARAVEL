@@ -6,9 +6,9 @@
 </div>
             
 
-<div>
+<div class="m-5">
     <h1 class="text-center mt-3">{{__('es.product.list_products_title')}}</h1>
-    <table class="table table-bordered m-5">
+    <table class="table table-bordered">
         <thead>
             <th scope="col">@lang('es.product.name')</th>
             <th scope="col">@lang('es.product.value')</th>

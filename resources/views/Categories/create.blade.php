@@ -51,7 +51,7 @@
                                 <span>
                             @enderror
                         </div>
-                   {{--   @foreach($category as $cat )
+                    @foreach($category as $cat )
                
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                     @endforeach --}}
+                     @endforeach
                     </div>
                     <button>Crear</button>
                 </form>

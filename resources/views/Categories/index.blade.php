@@ -5,11 +5,11 @@
 </div>   
             
 
-<div>
+<div class="m-5">
     <h1 class="text-center mt-3">{{__('es.category.list_categories_title')}}</h1>
-    <table class="table table-bordered">
+    <table class="table table-bordered ">
         <thead>
-            <th scope="col"></th>
+            
             <th scope="col">@lang('es.category.nameCategory')</th>
             <th scope="col">@lang('es.category.description')</th>
             <th scope="col">@lang('es.category.value')</th>
@@ -20,7 +20,7 @@
         <tbody>
             @foreach ( $category as $cat )
                 <tr>
-                    <td> check</td>
+                    
                     <td>{{$cat-> nameCategory}}</td>
                     <td>{{$cat-> description}}</td>
                     <td>{{$cat-> value}}</td>
