@@ -3,7 +3,7 @@
 return [
     'product'=> [
         //Title
-        'create_title' => "Crear Curso",
+        'create_title' => 'Crear Curso',
         'list_products_title' => 'Todos los Productos',
         'update_title' => 'Modificar Producto',
         'show_title' => 'Ver  Producto',
