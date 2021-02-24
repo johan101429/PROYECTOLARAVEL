@@ -84,7 +84,7 @@
             @yield('content')
         </main>   
     </div>
-    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-5">
+    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-2">
         <address >@COPYRIGHT 2021 PROBANDO ANDO... TODOS LOS DERECHOS RESERVADOS Calle 14 # 22-57 </address>
       </footer>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 

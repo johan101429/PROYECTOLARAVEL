@@ -10,7 +10,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{$prod->name}}</h5>
                 <p class="card-text">{{$prod->description}}.</p>
-                <a type="button" class="btn btn-success" href="/product/{{$prod->id}}">check</a>
+                <a type="button" class="btn btn-success" href="/product/{{$prod->id}}">Mas info</a>
               </div>
             </div>
           </div>

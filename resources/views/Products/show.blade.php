@@ -27,8 +27,8 @@
 
                 </div>
             </div>
-            <div class="row g-0">
-                <div class="col-12">
+            <div class="form-row m-4 row">
+                <div class="col-12 text-center">
                     <a  class="btn btn-info" href="/product">volver</a>
                 </div>
             </div>

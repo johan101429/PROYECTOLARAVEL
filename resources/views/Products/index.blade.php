@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="d-flex justify-content-end m-5">
-    <a href="/product/create"> {{__('es.product.create_title')}} </a>
+    <a class="btn btn-info" href="/product/create"> {{__('es.product.create_title')}} </a>
     
 </div>
             

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="d-flex justify-content-end m-5">
-    <a href="/category/create"> {{__('es.category.create_title')}} </a>
+    <a class="btn btn-info" href="/category/create"> {{__('es.category.create_title')}} </a>
 </div>   
             
 
@@ -12,7 +12,6 @@
             
             <th scope="col">@lang('es.category.nameCategory')</th>
             <th scope="col">@lang('es.category.description')</th>
-            <th scope="col">@lang('es.category.value')</th>
             <th scope="col">@lang('es.category.status')</th>
             <th scope="col"></th>
 
@@ -23,7 +22,6 @@
                     
                     <td>{{$cat-> nameCategory}}</td>
                     <td>{{$cat-> description}}</td>
-                    <td>{{$cat-> value}}</td>
                     <td>{{$cat-> status}}</td>
                     <td>
                         <a type="button" class="btn btn-success" href="/category/{{$cat->id}}">

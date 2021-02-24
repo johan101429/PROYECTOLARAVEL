@@ -18,7 +18,7 @@ class AddColumnsToTableProducts extends Migration
             $table->text('description')->nullable($value = false)->after('name');
             $table->integer('value')->nullable($value = false)->after('description');
             $table->string('image')->nullable()->after('value');
-            $table->enum('status',['Activo','Inactivo'])->after('image');
+            $table->enum('status',['Activo','Inactivo','Inactivo'])->after('image');
         });
     }
 

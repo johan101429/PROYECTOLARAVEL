@@ -9,8 +9,6 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
-
 </head>
 
 <body>
@@ -28,7 +26,7 @@
                 <div class="navbar-collapse collapse" id="bdNavbar">
                     <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
                         @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 ml-auto">
+                            <div class="hidden fixed d-flex justify-content-end">
                                 @auth
                                     <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                                     <a href="{{ url('/product') }}" class="text-sm text-gray-700 underline">Productos</a>
@@ -65,7 +63,13 @@
             </div>
         </div>
     </header>
-    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-5">
+    <div class="form-row m-4 row m-5">
+        <div class="col-12 text-center">
+            <a type="button" class="btn btn-success" href="/home/list">
+                Ver Productos</a>
+        </div>
+    </div>
+    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-2">
         <address >@COPYRIGHT 2021 PROBANDO ANDO... TODOS LOS DERECHOS RESERVADOS Calle 14 # 22-57 </address>
       </footer>
 </body>

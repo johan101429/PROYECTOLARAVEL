@@ -33,5 +33,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home/list', [App\Http\Controllers\HomeController::class, 'listado'])->name('listaProductos');
 Route::get('/list', [ProductController::class, 'listado'])->name('listaProductos');
