@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container mt-5">
-        <h1 class="card-title text-center">@lang('es.product.update_title')</h1>
+
+    <div class="container">
         <div class="card text-justify center-form">
-
             <div class="card-body">
-
+                <h1 class="card-title text-center">@lang('es.product.update_title')</h1>
                 <form method="POST" class=" needs- validations" action="/product/{{ $product->id }}"
                     enctype="multipart/form-data" novalidate>
                     {{ csrf_field() }}
@@ -25,8 +24,6 @@
 
                         </div>
                     </div>
-
-
                     <div class="form-row mt-4 row">
                         <div class="col-12 col-sm-6 col-md-6">
                             <label>@lang('es.product.name')</label>
@@ -35,8 +32,8 @@
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -48,8 +45,8 @@
                             @error('value')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -61,8 +58,8 @@
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -75,16 +72,13 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-row m-4 row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-info">Modificar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-row m-4 row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-info">Modificar</button>
-                </div>
-            </div>
-            </form>
-
         </div>
     </div>
-    </div>
-
 @endsection

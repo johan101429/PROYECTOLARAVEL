@@ -1,19 +1,16 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container mt-5">
-        <h1 class="card-title text-center">@lang('es.product.create_title')</h1>
+
+    <div class="container">
         <div class="card text-justify center-form">
-
             <div class="card-body">
-
+                <h1 class="card-title text-center"><strong>@lang('es.product.create_title')</strong></h1>
                 <form method="POST" class=" needs- validations" action="/product" enctype="multipart/form-data" novalidate>
                     @csrf
-
                     <div class="form-row mt-4 row">
                         <div class="col-12 col-sm-6 col-md-6">
                             <label>Imagen</label>
                             <input type="file" name="productcover" class="form-control">
-
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -36,8 +33,8 @@
                             @error('value')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -49,8 +46,8 @@
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -65,16 +62,13 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-row m-4 row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-info">Crear</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="form-row m-4 row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-info">Crear</button>
-                </div>
-            </div>
-            </form>
-
         </div>
     </div>
-    </div>
-
 @endsection

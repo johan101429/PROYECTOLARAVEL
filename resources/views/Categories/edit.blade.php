@@ -1,11 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="container mt-5">
-        <h1 class="card-title text-center">@lang('es.category.update_title')</h1>
         <div class="card text-justify center-form">
-
             <div class="card-body">
-
+                <h1 class="card-title text-center"><strong>@lang('es.category.update_title')</strong></h1>
                 <form method="POST" class=" needs- validations" action="/category/{{ $category->id }}"
                     enctype="multipart/form-data" novalidate>
                     {{ csrf_field() }}
@@ -20,8 +18,8 @@
                             @error('nameCategory')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -33,8 +31,8 @@
                             @error('value')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -46,8 +44,8 @@
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mt-4 row">
@@ -59,42 +57,17 @@
                             @error('status')
                                 <span class="invalid-feedback" role="alert">
                                     <b>{{ $message }}</b>
-                                    <span>
-                                    @enderror
+                                <span>
+                            @enderror
                         </div>
                     </div>
-                    {{-- @foreach ($category as $cat)
-               
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        {{$cat-> nameCategory}}
-                                     </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                         <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                                             <label class="form-check-label" for="flexCheckDefault">
-                                                 {{$cat-> nameCategory}}
-                                             </label>
-                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="form-row m-4 row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-info">Modificar</button>
                         </div>
-                     @endforeach --}}
+                    </div>
+                </form>
             </div>
-            <div class="form-row m-4 row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-info">Modificar</button>
-                </div>
-            </div>
-            </form>
-
         </div>
     </div>
-    </div>
-
 @endsection
