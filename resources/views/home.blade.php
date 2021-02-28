@@ -9,49 +9,23 @@
                 {{ session('status') }}
             </div>
         @endif
-        <section class=" py-4 text-sm-center text-md-center text-lg-center text-xl-center">
-            <div class="container-fluid">
-                <img src="{{url(Storage::url('home/home1.jpg'))}}" alt="icono" width="181px" class="img-fluid mx.auto py-5">
+        <section class=" py-4 text-sm-center text-mad-center text-lg-center text-xl-center">
+            <h1><strong><h1 class="bg-info">Bienvenido Programando Ando ...</h1></strong></h1>
+            <div id="carouselExampleSlidesOnly" class="carousel slide my-4" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-50" src="{{ asset('storage/images/descarga.jpg') }}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-50" src="{{ asset('storage/images/banner.jpg') }}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-50" src="{{ asset('storage/images/images.jpg') }}" alt="Third slide">
+                    </div>
+                </div>
             </div>
+             
         </section>
-      {{--   <section>
-        @foreach ( $categories as $cat )
-        <h1 class="display-5"> {{$cat->nameCategory}} </h1>
-        <p class="p-3"> {{$cat->description}}.</p>
-
-        <div class="container">
-            <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center">
-                <img class="card-img-top" src="images/articlejs.jpg" alt="super" />
-                <div class="card-body">
-                    <h5 class="card-title">JavaScript</h5>
-                    <p class="card-text">Lenguaje de Programacion.</p>
-                    <a href="#">check</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                <img class="card-img-top" src="images/articlephp.png" alt="N64" />
-                <div class="card-body">
-                    <h5 class="card-title">PHP</h5>
-                    <p class="card-text">Lenguaje de Programacion.</p>
-                    <a href="#">check</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-                
-               
-             --}}
-            
-            
-        
-                
-               
-            
         
     </div>
 </div>

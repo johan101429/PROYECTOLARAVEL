@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\ContactUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::resource('/product',ProductController::class);
 Route::resource('/category',CategoryController::class);
-
+Route::resource('/contact',ContactUsController::class);
 /*Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -33,5 +33,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home/list', [App\Http\Controllers\HomeController::class, 'listado'])->name('listaProductos');
 Route::get('/list', [ProductController::class, 'listado'])->name('listaProductos');
+Route::get('/Contactus', [ContactUsController::class, 'contact'])->name('contactus');

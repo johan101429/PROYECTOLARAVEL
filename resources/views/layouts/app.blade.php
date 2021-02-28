@@ -22,7 +22,7 @@
     
 </head>
 
-<body>
+<body id="fondo">
     <div id="app">
         <nav class="navbar navbar-expand-md  navbar-dark bg-dark bg-gradient shadow-sm">
             <div class="container">
@@ -37,25 +37,22 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}   </a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}   </a>
                                 </li>
                             @endif
                         @else
                         <li class="nav-item dropdown">
                             <li class="nav-item">
-                                <a class="nav-link" href="/product">Productos</a>
+                                <a class="nav-link" href="/product">Productos   </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/category">Categorias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/cate">Contactenos</a>
                             </li>
                         </li>
                             <li class="nav-item dropdown">
@@ -84,9 +81,7 @@
             @yield('content')
         </main>   
     </div>
-    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-5">
-        <address >@COPYRIGHT 2021 PROBANDO ANDO... TODOS LOS DERECHOS RESERVADOS Calle 14 # 22-57 </address>
-      </footer>
+    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
     <script src="{{ asset('js/functions.js')}}"> </script>
 </body>

@@ -6,7 +6,8 @@ return [
         'create_title' => 'Crear Curso',
         'list_products_title' => 'Todos los Productos',
         'update_title' => 'Modificar Producto',
-        'show_title' => 'Ver  Producto',
+        'show_title' => 'Ver Producto',
+        'see_view' => 'Como Me Ven',
 
         //item
         'name' => 'Nombre del Producto',

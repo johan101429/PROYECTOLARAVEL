@@ -9,11 +9,9 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
-
 </head>
 
-<body>
+<body id="fondo">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
             <div class="container-fluid">
@@ -25,22 +23,22 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse" id="bdNavbar">
+                <div class="navbar-collapse collapse d-flex justify-content-end" id="bdNavbar">
                     <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
                         @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 ml-auto">
+                            <div class="hidden fixed d-flex justify-content-end">
                                 @auth
-                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                                    <a href="{{ url('/product') }}" class="text-sm text-gray-700 underline">Productos</a>
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline m-2"> Home   </a>
+                                    <a href="{{ url('/product') }}" class="text-sm text-gray-700 underline m-2"> Productos   </a>
                                     <a href="{{ url('/category') }}"
-                                        class="text-sm text-gray-700 underline">Categorias</a>
+                                        class="text-sm text-gray-700 underline m-2"> Categorias   </a>
 
                                 @else
-                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline m-2"> Login   </a>
 
                                     @if (Route::has('register'))
                                         <a href="{{ route('register') }}"
-                                            class="ml-4 text-sm text-gray-700 underline">Register</a>
+                                            class="ml-4 text-sm text-gray-700 underline m-2"> Register   </a>
                                     @endif
 
                                 @endauth
@@ -51,6 +49,7 @@
                 </div>
             </div>
         </nav>
+        
         <div id="carouselExampleSlidesOnly" class="carousel slide my-4" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -65,9 +64,13 @@
             </div>
         </div>
     </header>
-    <footer class="bg-secondary bg-gradient d-flex justify-content-center p-5">
-        <address >@COPYRIGHT 2021 PROBANDO ANDO... TODOS LOS DERECHOS RESERVADOS Calle 14 # 22-57 </address>
-      </footer>
+    <div class="form-row m-4 row m-5">
+        <div class="col-12 text-center">
+            <a type="button" class="btn btn-info" href="/home/list">
+                Ver Productos</a>
+        </div>
+    </div>
+   
 </body>
 
 </html>
