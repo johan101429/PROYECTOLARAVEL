@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Mail\Mailable;
-use App\Mail\Contactus;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -18,7 +16,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        return view('ContactUs.index');
+      //
     }
 
     /**
@@ -39,29 +37,28 @@ class ContactUsController extends Controller
      */
      
      
-
     public function store(Request $request)
     {             
       
         $contact = new Contact;
         $contact->name = $request->name;
-        $contact->phone = $request->phone;
         $contact->email = $request->email;
+        $contact->phone = $request->phone;
         $contact->description =$request->description;  
         $contact->save();  
                      
         Mail::send('notificaciones/mailUser',['Contact'=>$contact], function($message) use ($contact){
-            message->from('pruebalaravelnataly@gmail.com','notificaciones');
-            message->to('pruebalaravelnataly@gmail.com');
+            message->from('pruebalaravelnataly@gmail.com','Programando Ando...');
+            message->to('natavanegas1014@gmail.com');
             message->subject('has recibido un mensaje'.$contact->name);
         });
         Mail::send('notificaciones/mailClient',['Contact'=>$contact], function($message) use ($contact){
-        message->from('pruebalaravelnataly@gmail.com','notificaciones2');
+        message->from('pruebalaravelnataly@gmail.com','Programando Ando...');
         message->to($contact->email);
-        message->subject('Copia de mensaje enviado a'.$contact->name);
+        message->subject('Mensaje enviado a'.$contact->name);
         }); 
-        $request->session()->flash('sucess', "el mensaje se envio correctamente");
-        return redirect()->back;    
+        $request->session()->flash('success', "el mensaje se envio correctamente");
+        return redirect()->back();    
     }
 
     
@@ -74,11 +71,10 @@ class ContactUsController extends Controller
      */
     
      public function show(Contact $contact)
-    
+   
     {
-        
         //
-     } 
+    } 
 
     /**
      * Show the form for editing the specified resource.
